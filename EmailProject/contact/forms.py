@@ -7,7 +7,7 @@ class ContactForm(forms.Form):
 
     name = forms.CharField(max_length=120)
     email = forms.EmailField()
-    enquiry = forms.CharField(max_length=70)
+    inquiry = forms.CharField(max_length=70)
     message = forms.CharField(widget=forms.Textarea)
 
     def get_info(self):
@@ -20,7 +20,7 @@ class ContactForm(forms.Form):
 
         name = cl_data.get('name').strip()
         from_email = cl_data.get('email')
-        subject = cl_data.get('enquiry')
+        subject = cl_data.get('inquiry')
 
         msg = f'{name} with email {from_email} said:'
         msg += f'\n"{subject}"\n\n'
